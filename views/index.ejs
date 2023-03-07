@@ -6,7 +6,17 @@
             <h5 class="text-center">Welcome to the club <%= currentUser.fullname %>!</h1>
             <a class="d-block text-center btn btn-dark mt-3 mb-3" href="/new-message">New Message +</a>
             <div>
-                the content of stuff
+                <ul class="list-group">
+                    <% messages.forEach((message) => { %>
+                      <li class="list-group-item">
+                        <h5><%= message.title %></h3>
+                        <p class="lead"><%= message.text %></p>
+                        <p class="text-end"><%= message.createdBy.email %></p>
+                        <p class="float-end"><%= message.timestamp.toLocaleDateString('en-us', { weekday:"short", year:"numeric",
+                            month:"short", day:"numeric"}) %></p>
+                      </li>
+                    <% }) %>
+                  </ul>
             </div>
             <% } else { %>
             <h3 class="card-title text-center mb-4">Please log in to continue.</h3>

@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 
-router.get("/", (req, res) => {
-    res.status(200).render("index");
-});
+const getAllMessages = require("../controllers/get-all-messages");
+
+router.get("/", getAllMessages);
 
 router.post(
     "/",
