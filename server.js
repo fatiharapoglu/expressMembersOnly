@@ -11,6 +11,7 @@ const indexRouter = require("./routes/index");
 const signUpRouter = require("./routes/sign-up");
 const logOutRouter = require("./routes/log-out");
 const getPremiumRouter = require("./routes/get-premium");
+const logInFailedRouter = require("./routes/log-in-failed");
 const notFound = require("./middleware/404");
 
 const app = express();
@@ -31,6 +32,7 @@ app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/get-premium", getPremiumRouter);
 app.use("/log-out", logOutRouter);
+app.use("/log-in-failed", logInFailedRouter);
 app.use(notFound);
 
 const start = async () => {

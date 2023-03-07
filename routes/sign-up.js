@@ -6,7 +6,7 @@ const validatePassword = require("../middleware/validate");
 const checkValidationErrors = require("../middleware/validation-errors");
 
 router.get("/", (req, res) => {
-    res.render("sign-up");
+    res.status(200).render("sign-up");
 });
 
 router.post("/", validatePassword, checkValidationErrors, signUp);
