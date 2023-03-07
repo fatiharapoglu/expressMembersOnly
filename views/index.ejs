@@ -1,7 +1,11 @@
 <div class="col-md-6">
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title text-center mb-4">Welcome to the club.</h3>
+            <% if (user) {%>
+            <h1>Welcome to the club <%= user.fullname %>!</h1>
+            <a href="/log-out">Log Out</a>
+            <% } else { %>
+            <h3 class="card-title text-center mb-4">Please log in to continue.</h3>
             <form action="/" method="POST">
                 <div class="form-group mb-3">
                     <label for="email">E-mail:</label>
@@ -28,6 +32,7 @@
                     <a href="/sign-up" class="btn btn-primary">Sign-Up</a>
                 </div>
             </form>
+            <%}%>
         </div>
     </div>
 </div>

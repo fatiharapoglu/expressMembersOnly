@@ -3,9 +3,9 @@ const User = require("../models/user");
 const signUp = async (req, res) => {
     try {
         await User.create(req.body);
-        res.status(201).render("home");
-    } catch (error) {
-        res.status(500).render("error", { error });
+        res.status(201).render("index", { user: req.user });
+    } catch (err) {
+        res.status(400).render("error", { err });
     }
 };
 
