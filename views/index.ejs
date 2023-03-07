@@ -1,9 +1,13 @@
-<div class="col-md-6">
+<div class="col-md-8">
     <div class="card">
         <div class="card-body">
-            <% if (user) {%>
-            <h1>Welcome to the club <%= user.fullname %>!</h1>
-            <a href="/log-out">Log Out</a>
+            <% if (currentUser) {%>
+            <a class="float-end fs-6" href="/log-out">Log Out</a>
+            <h5 class="text-center">Welcome to the club <%= currentUser.fullname %>!</h1>
+            <a class="d-block text-center btn btn-dark mt-3 mb-3" href="/new-message">New Message +</a>
+            <div>
+                the content of stuff
+            </div>
             <% } else { %>
             <h3 class="card-title text-center mb-4">Please log in to continue.</h3>
             <form action="/" method="POST">

@@ -12,7 +12,9 @@ const signUpRouter = require("./routes/sign-up");
 const logOutRouter = require("./routes/log-out");
 const getPremiumRouter = require("./routes/get-premium");
 const logInFailedRouter = require("./routes/log-in-failed");
+const newMsgRouter = require("./routes/new-message");
 const notFound = require("./middleware/404");
+const defineCurrentUser = require("./middleware/local-current-user");
 
 const app = express();
 const port = process.env.PORT || 3030;
@@ -27,12 +29,14 @@ app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUniniti
 require("./middleware/passport");
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(defineCurrentUser);
 
 app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
 app.use("/get-premium", getPremiumRouter);
 app.use("/log-out", logOutRouter);
 app.use("/log-in-failed", logInFailedRouter);
+app.use("/new-message", newMsgRouter);
 app.use(notFound);
 
 const start = async () => {
