@@ -1,12 +1,24 @@
 <form method="POST" action="/new-message">
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="title">Title:</label>
-        <input type="text" class="form-control" name="title" required />
+        <input
+            type="text"
+            class="form-control"
+            name="title"
+            placeholder="Front-End RULES!!!"
+            required
+        />
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="text">Your Message:</label>
-        <textarea class="form-control" name="text" required></textarea>
+        <textarea
+            class="form-control"
+            name="text"
+            placeholder="Working with template engines feels like i'm coding in 1990s"
+            required
+        ></textarea>
     </div>
     <input type="hidden" name="createdBy" value="<%= currentUser._id %>" />
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-dark">Submit</button>
+    <a href="/" class="btn btn-dark">Cancel</a>
 </form>
