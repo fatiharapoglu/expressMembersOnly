@@ -7,6 +7,7 @@ require("dotenv").config();
 
 const indexRouter = require("./routes/index");
 const signUpRouter = require("./routes/sign-up");
+const getPremiumRouter = require("./routes/get-premium");
 const notFound = require("./middleware/404");
 
 mongoose.set("strictQuery", false);
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", indexRouter);
 app.use("/sign-up", signUpRouter);
+app.use("/get-premium", getPremiumRouter);
 app.use(notFound);
 
 const start = async () => {
