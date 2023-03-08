@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 
 const getAllMessages = require("../controllers/get-all-messages");
+const deleteMessage = require("../controllers/delete-message");
 
 router.get("/", getAllMessages);
 
@@ -13,5 +14,7 @@ router.post(
         failureRedirect: "/log-in-failed",
     })
 );
+
+router.delete("/:id", deleteMessage);
 
 module.exports = router;
