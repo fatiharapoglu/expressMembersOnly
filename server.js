@@ -5,6 +5,10 @@ const favicon = require("serve-favicon");
 const session = require("express-session");
 const passport = require("passport");
 const methodOverride = require("method-override");
+const helmet = require("helmet");
+const cors = require("cors");
+const xss = require("xss-clean");
+const rateLimiter = require("express-rate-limit");
 require("ejs");
 require("dotenv").config();
 
@@ -21,6 +25,7 @@ const app = express();
 const port = process.env.PORT || 3030;
 
 app.set("view engine", "ejs");
+app.set("trust proxy", 1);
 app.use(express.static("public"));
 app.use(favicon("public/assets/favicon.png"));
 app.use(expressLayouts);
@@ -28,6 +33,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
 app.use(methodOverride("_method"));
+app.use(helmet());
+app.use(cors());
+app.use(xss());
+app.use(
+    rateLimiter({
+        windowMs: 15 * 60 * 1000,
+        max: 100,
+    })
+);
 
 require("./middleware/passport");
 app.use(passport.initialize());
