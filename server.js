@@ -22,6 +22,7 @@ const port = process.env.PORT || 3030;
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(favicon("public/assets/favicon.png"));
 app.use(expressLayouts);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
