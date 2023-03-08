@@ -1,6 +1,9 @@
 const Message = require("../models/message");
 
 const deleteMessage = async (req, res) => {
+    if (!res.locals.currentUser.isAdmin) {
+        return res.status(401).render("error", { err: "You're not an admin, please stop it." });
+    }
     try {
         await Message.findOneAndDelete({ _id: req.params.id });
         res.redirect("../");
