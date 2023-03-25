@@ -37,7 +37,7 @@ app.use(cors());
 app.use(
     rateLimiter({
         windowMs: 15 * 60 * 1000,
-        max: 10,
+        max: 100,
     })
 );
 
