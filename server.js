@@ -7,7 +7,6 @@ const passport = require("passport");
 const methodOverride = require("method-override");
 const helmet = require("helmet");
 const cors = require("cors");
-const xss = require("xss-clean");
 const rateLimiter = require("express-rate-limit");
 require("ejs");
 require("dotenv").config();
@@ -35,11 +34,10 @@ app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUniniti
 app.use(methodOverride("_method"));
 app.use(helmet());
 app.use(cors());
-app.use(xss());
 app.use(
     rateLimiter({
         windowMs: 15 * 60 * 1000,
-        max: 100,
+        max: 10,
     })
 );
 
