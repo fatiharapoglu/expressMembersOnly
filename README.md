@@ -1,6 +1,6 @@
 # Members Only
 
-Members Only app created with **Express**, **Bootstrap** and **mongoDB**.
+Members Only app created with **Express**, **Bootstrap** and **mongoDB**. Deployed on [**Cyclic.sh**](https://www.cyclic.sh/).
 
 ⮕ [Live preview](https://express-members-only.cyclic.app/)
 
