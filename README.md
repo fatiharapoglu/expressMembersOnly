@@ -4,7 +4,11 @@ Members Only app created with **Express**, **Bootstrap** and **mongoDB**. Deploy
 
 ⮕ [Live preview](https://express-members-only.cyclic.app/)
 
-Secret key for premium status: **theodinproject**
+---
+
+`Secret key for premium status: theodinproject`
+
+---
 
 ## Features
 
@@ -27,7 +31,7 @@ Secret key for premium status: **theodinproject**
 -   [dotenv](https://www.npmjs.com/package/dotenv) for processing .env files
 -   [serve-favicon](https://www.npmjs.com/package/serve-favicon) for serving favicon in servers
 -   [nodemon](https://nodemon.io/) for monitoring any changes and automatically restarting server
--   [cors](https://www.npmjs.com/package/helmet) for enabling CORS with defined options
+-   [cors](https://www.npmjs.com/package/cors) for enabling CORS with defined options
 -   [helmet](https://www.npmjs.com/package/helmet) for security
 
 ## How It Looks
