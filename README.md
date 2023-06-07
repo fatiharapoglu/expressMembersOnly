@@ -37,3 +37,13 @@ Members Only app created with **Express**, **Bootstrap** and **mongoDB**. Deploy
 ## How It Looks
 
 ![ss](./public/assets/readme.png)
+
+## Contact
+
+⮕ [Portfolio](https://fatiharapoglu.dev)
+
+⮕ [LinkedIn](https://www.linkedin.com/in/fatiharapoglu/)
+
+## License
+
+Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License.
